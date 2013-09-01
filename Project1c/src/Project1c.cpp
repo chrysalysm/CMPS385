@@ -10,6 +10,14 @@
 using namespace std;
 
 int main() {
-	cout << "Hello World!" << endl; // prints Hello World!
+	char Days[7][15] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Sat", "Sunday"};
+
+	for (int a = 0; a < 7; a++) {
+		for (int b = 0; b < 15; b++) {
+			cout << Days[a][b];
+		}
+		cout << " ";
+	}
+	cout << endl;
 	return 0;
 }
