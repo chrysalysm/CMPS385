@@ -7,9 +7,18 @@
 //============================================================================
 
 #include <iostream>
+#include <fstream>
+
 using namespace std;
 
 int main() {
-	cout << "Hello World!" << endl; // prints Hello World!
+	fstream myFile;
+	myFile.open("data.txt", ios::out);
+	myFile << "Michael 33 3.3\n";
+	myFile << "Joseph 44 3.7\n";
+	myFile << "Rusian 19 2.9\n";
+	myFile << "Joel 17 3\n";
+	myFile << "Cristina 21 3.2\n";
+	myFile.close();
 	return 0;
 }
