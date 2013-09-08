@@ -30,6 +30,17 @@ float AverageGPA(Person[], float &);
 int AverageAGE(Person[]);
 
 int main() {
+
+	// Project 2i
+	fstream myFile;
+	myFile.open("data.txt", ios::out);
+	myFile << "Michael 33 3.3\n";
+	myFile << "Joseph 44 3.7\n";
+	myFile << "Rusian 19 2.9\n";
+	myFile << "Joel 17 3\n";
+	myFile << "Cristina 21 3.2\n";
+	myFile.close();
+
 	Person a[5];
 	// Copy data from file data.txt into array a
 	Copy("data.txt", a);
