@@ -3,7 +3,7 @@
 // Author      : Benjamin Chu
 // Version     :
 // Copyright   : Creative Commons - Attribution 3.0
-// Description : Hello World in C++, Ansi-style
+// Description : Project2-2 with Runtime
 //============================================================================
 
 #include <iostream>
@@ -13,6 +13,7 @@ using namespace std;
 // Declaring user-defined functions
 int sum(int, int);
 int g(int);
+int f(int);
 
 int main() {
 	cout << endl;
