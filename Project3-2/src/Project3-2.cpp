@@ -40,7 +40,7 @@ int main() {
 	ODD.CreateStack();
 
 	// Loop to fill STACK S with random integers < 100
-	for (int i = 0; i < 10; i++) {
+	while (!S.FullStack()) {
 		S.PushStack(rand() % 100);
 	}
 
