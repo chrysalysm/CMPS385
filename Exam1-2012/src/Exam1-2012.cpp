@@ -13,6 +13,15 @@
 #include <algorithm>
 using namespace std;
 
+template <class T>
+
+void Display(T x[], int n) {
+	for (int i = 0; i < n; i++) {
+		cout << x[i] << " ";
+	}
+	cout << endl;
+}
+
 int main() {
 	// 1 - i
 	// Display array Class followed by the length of each
@@ -43,9 +52,39 @@ int main() {
 	// 2 - Write Display Function
 	int a[5] = {3, 8, 1, 9, 2};
 	string day[4] = {"Tuesday", "Wednesday", "Fri", "Mon"};
-	char c[5] = {'o', 'c', 't', 'o', 'b', 'e', 'r'};
+	char c[7] = {'o', 'c', 't', 'o', 'b', 'e', 'r'};
+	/*
+	 *	template <class T>
+	 *	void Display(T x[], int n) {
+	 *		for (int i = 0; i < n; i++) {
+	 *			cout << x[i] << " ";
+	 *		}
+	 *	cout << endl;
+	 *	}
+	 */
+	Display(a, 5);
+	Display(day, 4);
+	Display(c, 7);
 
+	// 3 - Recursive definition to function
+	/*
+	int sum(int n, int m) {
+		if (n == m) return m;
+		else n + sum(n+1, m);
+	}
+	*/
 
+	// 4 - Use <string> lib to display initial of country names with 1-3 words.
+	cout << "\nEnter name of country: ";
+	string name, i1, i2, i3;
+	int n1, n2;
+	getline(cin, name);
+	i1 = name.substr(0, 1);
+	n1 = name.find(' ');
+	i2 = name.substr(n1 + 1, 1);
+	n2 = name.find(' ', n1 + 1);
+	i3 = name.substr(n2 + 1, 1);
+	cout << i1 << " " << i2 << " " << i3 << endl;
 
 	return 0;
 }
