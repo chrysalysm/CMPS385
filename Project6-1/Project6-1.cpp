@@ -17,8 +17,8 @@ int main() {
 	string sentence, cont;
 	char charsent[50], c1, c2;
 	// Creation of STACK and QUEUE
-	STACK<int> S;
-	QUEUE<int> Q;
+	STACK<char> S;
+	QUEUE<char> Q;
 	S.CreateStack();
 	Q.CreateQueue();
 	

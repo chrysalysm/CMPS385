@@ -17,7 +17,7 @@ class QUEUE {
 	private:
 		
 	struct NODE {
-		char info;
+		T info;
 		NODE *next;
 	};
 
@@ -27,7 +27,7 @@ class QUEUE {
 
 	void CreateQueue() { queue = NULL; }
 
-	void Push(char x) {
+	void Push(T x) {
 		NODE *r, *rear;
 		r = new NODE;
 		r -> info = x;
@@ -48,9 +48,9 @@ class QUEUE {
 		}
 	}
  
-	char Pop() {
+	T Pop() {
 		NODE *p = queue;
-		char x = queue -> info;
+		T x = queue -> info;
 		queue = p -> next;
 		delete(p);
 		return x;

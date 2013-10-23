@@ -17,7 +17,7 @@ class STACK {
 	private:
  
 	struct NODE {
-		char info;
+		T info;
 		NODE *next;
 	};
  
@@ -27,7 +27,7 @@ class STACK {
  
 	void CreateStack() { stack = NULL; }
 	
-	void Push(char x) {
+	void Push(T x) {
 		NODE *r;
 		r = new NODE;
 		r -> info = x;
@@ -35,9 +35,9 @@ class STACK {
 		stack = r;
 	}
  
-	char Pop() {
+	T Pop() {
 		NODE *p = stack;
-		char x = stack -> info;
+		T x = stack -> info;
 		stack = p -> next;
 		delete(p);
 		return x;
