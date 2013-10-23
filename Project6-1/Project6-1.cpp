@@ -7,31 +7,32 @@
 //============================================================================
 
 #include <iostream>
-
 #include "STACK.h"
 #include "QUEUE.h"
 
 using namespace std;
 
 int main() {
-
+	// Declaration of variabless
 	string sentence, cont;
 	char charsent[50], c1, c2;
-
+	// Creation of STACK and QUEUE
 	STACK<int> S;
 	QUEUE<int> Q;
 	S.CreateStack();
 	Q.CreateQueue();
 	
+	// While-loop for continue
 	while(true) {
 		cout << endl;
 		cout << "Enter a sentence: ";
 		getline(cin, sentence);
 		strcpy(charsent, sentence.c_str());
 
-		// Pushing user input to STACK
+		// Pushing user input into STACK and QUEUE
 		for (int i = 0; i < sentence.size(); i++) {
 			c1 = charsent[i];
+			// Checking for alphanumeric
 			if (isalnum(c1)) {
 				S.Push(c1);
 				Q.Push(c1);
@@ -40,10 +41,7 @@ int main() {
 			}
 		}
 
-		S.Display();
-		Q.Display();
-
-		// STACK comparison
+		// STACK and QUEUE comparision
 		while (!S.EmptyStack()) {
 			c1 = S.Pop();
 			c2 = Q.Pop();
@@ -54,8 +52,8 @@ int main() {
 			}
 		}
 
-		// If LR STACK was emptied with no break, Palindrome found
-		if (S.EmptyStack()) {
+		// If STACK and QUEUE was emptied with no break, Palindrome found
+		if (S.EmptyStack() && Q.EmptyQueue()) {
 			cout << "[" << sentence << "] is a Palindrome!" << endl;
 		} else {
 			cout << "[" << sentence << "] is NOT Palindrome." << endl;
@@ -67,6 +65,7 @@ int main() {
 		if (cont != "y") {
 			break;
 		} else {
+			// Clearing the STACK and QUEUE for new user input
 			while(!S.EmptyStack() || !Q.EmptyQueue()) {
 				S.Pop();
 				Q.Pop();
