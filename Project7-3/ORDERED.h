@@ -3,27 +3,27 @@
 
 using namespace std;
 
-template <class T>
-
 class OLL {
 
 private: 
 	struct NODE {
-		T info;
+		string first, last;
+		int age;
 		NODE *next;
 	};
 
 	NODE* ordered;
 
-
 public: 
 	void CreateOrdered() { ordered = NULL; }
 
-	void Insert(T x) {
+	void Insert(string x, string y, int z) {
 		// insert x in an ordered linked list
-		NODE* t, *q, *r;
+		NODE *t, *q, *r;
 		r = new (NODE);
-		r -> info = x;
+		r -> first = x;
+		r -> last = y;
+		r -> age = z;
 	
 		// If r is the first item in the Ordered Linked List
 		if (ordered == NULL) {
@@ -32,7 +32,7 @@ public:
 		} else { 
 			// find insertion place
 			t = q = ordered;
-			while (t != NULL && r -> info > t -> info) {
+			while (t != NULL && r -> age < t -> age) {
 			q = t;
 			t = t -> next;
 			}
@@ -47,69 +47,39 @@ public:
 		}	
 	}
 
+	bool EmptyOrdered() {
+		if (ordered == NULL) { return true; }
+		else { return false; }
+	}
+
 	void Display() {
-		NODE *t = ordered;
-		while (t != NULL) {
-			cout << t -> info << " --> ";
-			t = t -> next;
+		NODE *p = ordered;
+		while (p != NULL) {
+			cout << "[" << p -> first << "," << p -> last << " " << p -> age << "] -> ";
+			p = p -> next;
 		}
 		cout << "NULL\n";
 	}
 
-	void DisplayEven() {
-		NODE *t = ordered;
-		cout << "Even Numbers in the List: ";
-		while (t != NULL) {
-			if (t -> info % 2 == 0) {
-				cout << t -> info << " ";
-			}
-			t = t -> next;
-		}
-		cout << "\n";
+	string PopFirst() {
+		NODE *p = ordered;
+		string x = p -> first;
+		return x;
 	}
 
-	void DisplayOdd() {
-		NODE *t = ordered;
-		cout << "Odd Numbers in the List: ";
-		while (t != NULL) {
-			if (t -> info % 2 != 0) {
-				cout << t -> info << " ";
-			}
-			t = t -> next;
-		}
-		cout << "\n";
+	string PopLast() {
+		NODE *p = ordered;
+		string y = p -> last;
+		return y;
 	}
 
-	void DisplayMaxMin() {
-		NODE *t = ordered;
-		int max = 0, min = 0;
-		min = t -> info;
-		while (t != NULL) {
-			max = t -> info;
-			t = t -> next;
-			if (min > max) {
-				max = min;
-			}
-			else if (max < min) {
-				min = max;
-			}
-		}
-		cout << "Max: " << max;
-		cout << "\nMin: " << min;
-		cout << "\n";
+	int PopAge() {
+		NODE *p = ordered;
+		int z = p -> age;
+		ordered = p -> next;
+		delete(p);
+		return z;
 	}
-
-	float ComputeAve() {
-		NODE *t = ordered;
-		float average = 0.0, counter;
-		while (t != NULL) {
-			counter++;
-			average = average + t -> info;
-			t = t -> next;
-		}
-		return average = average / counter;
-	}
-
 };
 
 #endif
