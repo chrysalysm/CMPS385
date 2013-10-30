@@ -15,7 +15,6 @@ private:
 
 	NODE* ordered;
 
-
 public: 
 	void CreateOrdered() { ordered = NULL; }
 
@@ -109,7 +108,6 @@ public:
 		}
 		return average = average / counter;
 	}
-
 };
 
 #endif
