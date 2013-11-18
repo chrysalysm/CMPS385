@@ -1,0 +1,5 @@
+30	John	300
+50	Mary	500
+10	Bob	100
+40	Bill	400
+20	Will	900
