@@ -1,5 +1,9 @@
-30	John	300
-50	Mary	500
-10	Bob	100
-40	Bill	400
-20	Will	900
+30 Clinton,Bill	300.30
+50 Carter,Jimmy	500.50
+60 Bush,George	600.60
+20 Reagan,Ron	200.20
+10 Nixon,Kathy	100.10
+40 Bush,Barbra	400.40
+90 Obama,Barack	900.90
+100 Paul,Ron	700.70
+

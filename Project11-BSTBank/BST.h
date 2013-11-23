@@ -1,3 +1,11 @@
+//============================================================================
+// Name        : BST.h
+// Author      : Benjamin Chu
+// Version     :
+// Copyright   : Creative Commons - Attribution 3.0
+// Description : Header file for BST for Banking Program
+//============================================================================
+
 #ifndef BST_
 #define BST_
 
@@ -220,95 +228,6 @@ public:
 	void DeleteNode(int x) {
 		DeleteNode(root, root, x);
 	}
-	/*
-	// this function needs a rewrite or something
-	// http://www.algolist.net/Data_structures/Binary_search_tree/Removal
-	void Delete(NODE* & p, int x) {
-		NODE *q;
-		if (p != NULL) {
-			q = p;
-			if (p -> right -> ID == x) {
-				p = p -> right;
-				// deletion of a leaf
-				if (p -> right == NULL && p -> left == NULL) {
-					q -> right = NULL;
-					delete(p);
-				// deletion if left subtree empty
-				} else if (p -> right != NULL && p -> left == NULL) {
-					q -> right = p -> right;
-					delete(p);
-				// deletion if right subtree empty
-				} else if (p -> right == NULL && p -> left != NULL) {
-					q -> right = p -> left;
-					delete(p);
-				// deletion if both subtree not empty
-				} else {
-					if (p -> right -> left == NULL) {
-						// right subtree root is min
-						// replace values and then delete the min
-						NODE *r;
-						r = p -> right;
-						p -> ID = r -> ID;
-						p -> name = r -> name;
-						p -> balance = r -> balance;
-						Delete(p, r -> ID);
-					} else {
-						// right subtree left is min
-						NODE *r;
-						r = p -> right -> left;
-						p -> ID = r -> ID;
-						p -> name = r -> name;
-						p -> balance = r -> balance;
-						Delete(p -> right, r -> ID);
-					}
-				}
-			} else if (p -> left -> ID == x) {
-				p = p -> left;
-				if (p -> right == NULL && p -> left == NULL) {
-					q -> left = NULL;
-					delete p;
-				// deletion if left subtree empty
-				} else if (p -> right != NULL && p -> left == NULL) {
-					q -> left = p -> right;
-					delete p;
-				// deletion if right subtree empty
-				} else if (p -> right == NULL && p -> left != NULL) {
-					cout << q -> ID;
-					cout << p -> left -> ID;
-					q -> left = p -> left;
-					delete p;
-				// deletion if both subtree not empty
-				} else {
-					if (p -> right -> left == NULL) {
-						// right subtree root is min
-						// replace values and then delete the min
-						NODE *r;
-						r = p -> right;
-						p -> ID = r -> ID;
-						p -> name = r -> name;
-						p -> balance = r -> balance;
-						Delete(p, r -> ID);
-					} else {
-						// right subtree left is min
-						NODE *r;
-						r = p -> right -> left;
-						p -> ID = r -> ID;
-						p -> name = r -> name;
-						p -> balance = r -> balance;
-						Delete(p -> right, r -> ID);
-					}
-				}
-			} else {
-				Delete(p -> right, x);
-				Delete(p -> left, x);
-			}
-		}
-	}
-
-	void Delete(int x) {
-		Delete(root, x);
-	}
-	*/
 };
 
 #endif

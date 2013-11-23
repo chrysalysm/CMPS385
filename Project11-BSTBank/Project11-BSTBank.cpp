@@ -18,6 +18,7 @@ struct Record {
 };
  
 int main() {
+	// Creating text file
 	fstream myFile;
 	myFile.open("../../Cplusplus_CMPS385/Project11-BSTBank/data.txt", ios::out);
 	myFile << "33 Maria 1333\n";
@@ -34,12 +35,12 @@ int main() {
 		myFile >> r[i].ID >> r[i].name >> r[i].balance;
 	}
 	myFile.close();
-
+	// Copying data into a BST, using ID as key value
 	BST bank;
 	for (int i = 0; i < 6; i++) {
 		bank.Insert(r[i].ID, r[i].name, r[i].balance);
 	}
-	
+	// Displaying the table
 	cout << endl;
 	cout << "=======Bank of California=======\n";
 	cout << "a. Display all accounts\n";
@@ -56,6 +57,8 @@ int main() {
 		string acctName;
 		cin >> choice;
 		if (choice == 'a') {
+			cout << "ID\tName\tBalance\n";
+			cout << "=======================\n";
 			bank.DisplayInorder();
 		} else if (choice == 'b') {
 			cout << "\tEnter your ID number: ";
@@ -74,12 +77,14 @@ int main() {
 		} else if (choice == 'e') {
 			cout << "\tEnter the ID of account you wanna close: "; cin >> idNum;
 			bank.DeleteNode(idNum);
-			cout << "Account with ID " << idNum << " is now closed.";
+			cout << "\tAccount with ID " << idNum << " is now closed.\n";
 		} else if (choice == 'f') {
 			cout << "\tEnter the ID number you want: "; cin >> idNum;
 			cout << "\tEnter the name on the account: "; cin >> acctName;
 			cout << "\tEnter your initial balance: "; cin >> initBal;
 			bank.Insert(idNum, acctName, initBal);
+			cout << "\t" << acctName << ", your account with ID " << idNum << "\n";
+			cout << "\tand a balance of " << initBal << " has been created.\n";
 		} else {
 			cout << "Not a valid choice.\n";
 		}
