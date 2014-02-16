@@ -65,7 +65,6 @@ class fract {
 			p.d--;
 		}
 
-
 		void show() {
 			cout << n << "/" << d;
 		}

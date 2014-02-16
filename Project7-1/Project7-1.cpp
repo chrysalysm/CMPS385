@@ -32,7 +32,6 @@ int main() {
 	ave = Order.ComputeAve();
 	cout << "Average: " << ave << endl;
 	cout << endl;
-	
 	Order.Display();
 	return 0;
 }
